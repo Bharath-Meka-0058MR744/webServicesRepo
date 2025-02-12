@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <array name="globalVariables" type="record" depth="1">
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">user</value>
+        <value name="value">Administrator</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">url</value>
+        <value name="value">http://localhost:5555/ws/com.dachser.demoservice.provider:demoservice</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">mocking</value>
+        <value name="value">false</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">pass</value>
+        <value name="value">gvhandle.pass</value>
+        <value name="isSecure">true</value>
+      </record>
+    </array>
+  </record>
+</IDataXMLCoder>

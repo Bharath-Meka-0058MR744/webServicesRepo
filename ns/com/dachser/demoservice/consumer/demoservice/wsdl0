@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="demoservice" targetNamespace="http://dachser.com/com.dachser.demoservice.provider:demoservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dachser.com/com.dachser.demoservice.provider:demoservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dachser.com/com.dachser.demoservice.provider:demoservice" xmlns:tns="http://dachser.com/com.dachser.demoservice.provider:demoservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="processImage" type="tns:processImage"/>
+          <xsd:element name="processImageResponse" type="tns:processImageResponse"/>
+          <xsd:complexType name="processImage">
+            <xsd:sequence>
+              <xsd:element name="uuid" nillable="true" type="xsd:string"/>
+              <xsd:element name="terminalType" nillable="true" type="xsd:string"/>
+              <xsd:element name="codeType" nillable="true" type="xsd:string"/>
+              <xsd:element name="user" nillable="true" type="xsd:string"/>
+              <xsd:element name="code" nillable="true" type="xsd:string"/>
+              <xsd:element name="branch" nillable="true" type="xsd:string"/>
+              <xsd:element name="date" nillable="true" type="xsd:string"/>
+              <xsd:element name="nImage" nillable="true" type="xsd:string"/>
+              <xsd:element name="issue" nillable="true" type="xsd:string"/>
+              <xsd:element name="serialNumber" nillable="true" type="xsd:string"/>
+              <xsd:element name="extension" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="processImageResponse">
+            <xsd:sequence>
+              <xsd:element name="status" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="demoservice_PortType_processImage">
+    <wsdl:part name="parameters" element="tns:processImage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="demoservice_PortType_processImageResponse">
+    <wsdl:part name="parameters" element="tns:processImageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="demoservice_PortType">
+    <wsdl:operation name="processImage">
+      <wsdl:input message="tns:demoservice_PortType_processImage">
+    </wsdl:input>
+      <wsdl:output message="tns:demoservice_PortType_processImageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="com_dachser_demoservice_provider_demoservice_Binder" type="tns:demoservice_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="processImage">
+      <soap:operation soapAction="com_dachser_demoservice_provider_demoservice_Binder_processImage" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="com.dachser.demoservice.provider.demoservice">
+    <wsdl:port name="com_dachser_demoservice_provider_demoservice_Port" binding="tns:com_dachser_demoservice_provider_demoservice_Binder">
+      <soap:address location="http://localhost:5555/ws/com.dachser.demoservice.provider:demoservice/com_dachser_demoservice_provider_demoservice_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

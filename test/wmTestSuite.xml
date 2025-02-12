@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webMethodsTestSuite description="" name="Unit Tests for webservice">
+    <webMethodsTestCase description="Generate a Test Wizard" name="TC_invokeWebservice">
+        <service folder="com.dachser" name="invokeWebservice">
+            <input>
+                <file filename="test/com_dachser_invokeWebservice_input.xml"/>
+            </input>
+            <expected>
+                <file filename="test/com_dachser_invokeWebservice_output.xml"/>
+                <field operator="==" path="status" value="OK"/>
+                <field logical="or" operator="==" path="status" value="KO"/>
+                <field logical="or" operator="==" path="status" value="BACKUP"/>
+                <field logical="or" operator="==" path="status" value="NODOCUMENTADA"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+</webMethodsTestSuite>

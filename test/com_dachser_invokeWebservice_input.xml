@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <value name="uuid">def123</value>
+    <value name="terminalType">k</value>
+    <value name="codeType">l</value>
+    <value name="user">m</value>
+    <value name="code">n</value>
+    <value name="branch">o</value>
+    <value name="date">p</value>
+    <value name="nImage">q</value>
+    <value name="issue">r</value>
+    <value name="serialNumber">s</value>
+    <value name="extension">t</value>
+  </record>
+</IDataXMLCoder>
